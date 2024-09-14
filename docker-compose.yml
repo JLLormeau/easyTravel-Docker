@@ -29,7 +29,7 @@ services:
     links:
       - mongodb
     environment:
-      CATALINA_OPTS: "-Dconfig.apmServerDefault=${ET_APM_SERVER_DEFAULT} -Xmx300m"
+      CATALINA_OPTS: "-Dconfig.apmServerDefault=APM -Xmx300m"
       ET_DATABASE_LOCATION: "easytravel-mongodb:27017"
       ET_MONGO_AUTH_DB: "admin"
       ET_DATABASE_USER: "etAdmin"
@@ -46,7 +46,7 @@ services:
       - backend
       - mongodb
     environment:
-      CATALINA_OPTS: "-Dconfig.apmServerDefault=${ET_APM_SERVER_DEFAULT} -Xmx525m"
+      CATALINA_OPTS: "-Dconfig.apmServerDefault=APM -Xmx525m"
       ET_BACKEND_URL: "http://easytravel-backend:8080"
 
   angular-frontend:
@@ -60,7 +60,7 @@ services:
       - backend
       - mongodb
     environment:
-      CATALINA_OPTS: "-Dconfig.apmServerDefault=${ET_APM_SERVER_DEFAULT} -Xmx525m"
+      CATALINA_OPTS: "-Dconfig.apmServerDefault=APM -Xmx525m"
       ET_BACKEND_URL: "http://easytravel-backend:8080"
 
   www:
